@@ -1,0 +1,86 @@
+body{
+    margin:0;
+}
+
+/* Hierin staan er sales enz gwn reclame aanbiedingen v.d. website*/ 
+.tekst-header{
+    background-color: #3643ba;
+    color: white;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+padding: clamp(1.25rem, 1.4583rem + -1.0417vw, 0.625rem);
+}
+
+.zoekbalk{
+    border: none;
+    background-color: #F5F4F5;
+    border-radius: 25px;
+
+    display: flex;
+  display: blok;
+  margin: 10px auto;
+  margin-bottom: 15px;
+  width: clamp(15.625rem, 10.4167rem + 26.0417vw, 31.25rem);
+  height: clamp(2.1875rem, 1.9792rem + 1.0417vw, 2.8125rem);;
+
+}
+
+/*navigatie naar andere secties van de website dus naar dames/ kinderen/sportkleding etc*/
+.nav{
+    display: none;
+}
+
+ /*navigatie links (van waar je dus bent op de page) */
+ a{
+text-decoration: none;
+color:#616161;
+display: none;
+}
+
+/*de laatste navigatie link van waar je bent je ziet alleen deze op kleiner scherm*/
+.current {
+    color:#616161;
+    margin:10px;
+}
+
+/* tshirt img section*/
+.container-shirts{
+  display: flex;
+  gap:10px;
+height: 200px;
+width: auto;
+margin: 10px;
+@media (min-width: 768px){
+
+}
+}
+
+.id-text{
+    color: #616161;
+}
+
+.review{
+    width: 240px;
+    height: auto;
+}
+
+.kleine-fotos{
+    height:80px;
+    width: auto;
+}
+
+.prijs{
+    background-color: #FFCD4E;
+    padding: 5px 10px;
+    margin: 40px 0 0 20px;
+}
+.winkelmand{
+    background-color: #3643BA;
+    color: white;
+    font-size: 15px;
+    border: none;
+    padding: 25px 90px;
+    margin: 40px auto;
+    display:block;
+}
