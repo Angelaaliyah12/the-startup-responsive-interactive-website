@@ -124,6 +124,10 @@ display: none;
   font-weight: bold;
   background-color: #3643ba; 
   padding: 2px 5px;
+  
+  @media(min-width: 1024px){
+    display: none;
+  }
 }
 .line{
     width: 3px;
