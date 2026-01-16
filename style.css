@@ -48,48 +48,96 @@ display: none;
     color:#616161;
     margin:15px;
 }
-
-/* tshirt img section*/
-.container-shirts{
+/* Container van alle shirts */
+.container-shirts {
   display: flex;
-  flex-direction: column;
-  gap:10px;
-height:auto;
-width: clamp(18.125rem, -13.125rem + 156.25vw, 61.875rem);
-margin: 15px 15px 0 15px;
+  flex-direction: column;       /* verticale stapeling */
+  justify-content: flex-start;
+  width: clamp(18.125rem, 80% + 2rem, 61.875rem); /* responsive clamp */
+  height: 295px;                /* hoogte van het scroll-gebied */
+  margin: 15px auto 0 auto;
+  overflow-y: auto;             /* verticale scroll mogelijk */
+  scroll-snap-type: y mandatory; /* scroll-snap */
+  scroll-behavior: smooth;       /* soepele scroll */
+  -webkit-overflow-scrolling: touch; /* voor mobiel smooth scroll */
+  
+  @media(min-width:1024px){
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 12px;
+  padding: 10px;
 
-/* Desktop versie/layout */
-/* @media (min-width:1024px){
-    display:grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 0;
-    grid-row-gap:0;
-} */
+   overflow-y: auto;
+  scrollbar-width: none;
+  }
 }
 
-.shirt1{
+/* Verberg scrollbars */
+.container-shirts::-webkit-scrollbar {
+  display: none;
+}
+.container-shirts {
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
 
-/* grid-area: 1 / 1 / 2 / 2; */
-/* width: 150px; */
-}
-.shirt2{
-/* grid-area: 3 / 1 / 4 / 2; */
-/* width: 150px; */
-}
-.shirt3{
-/* grid-area: 5 / 1 / 6 / 2; */
-/* width: 150px; */
-}
-.shirt4{
-/* grid-area: 1 / 3 / 6 / 6; */
+/* Elke individuele slide */
+.slide {
+  position: relative;
+  flex-shrink: 0;           /* voorkomt dat slides krimpen */
+  width: 100%;              /* vult container breedte */
+  max-width: 300px;         /* max breedte van slide */
+  scroll-snap-align: start; /* scroll-snap aan het begin van elke slide */
 
+  @media (min-width:1024px){
+    position: relative;
+  height: 300px;
+  cursor: pointer;
+  }
 }
-.number-text{
-    color: white;
-    background-color: #3643ba;
-height:15px ;
-width: 25px;
+
+/* Afbeeldingen in slide */
+.slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  @media (min-width:1024px){
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s ease;
+  }
+}
+.slide:hover img {
+  filter: saturate(1);
+  transform: scale(1.05);
+}
+/* Overlay nummer tekst */
+.number-text {
+  position: absolute;
+  z-index: 10; /* hierdoor blijft het dus vast boven aan de slides*/
+  bottom: 5px;
+  left: 5px;
+  color: white;
+  font-weight: bold;
+  background-color: #3643ba; 
+  padding: 2px 5px;
+}
+.line{
+    width: 3px;
+    height:15px;
+    background-color: black;
+    border-radius: 10px;
+    display:flex;
+    margin:15px;
+    transition: background-color 0.6s ease;
+    cursor: pointer;
+}
+
+.active, .line:hover{
+    height:40px;
 }
 .id-text{
     color: #616161;
