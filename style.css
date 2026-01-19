@@ -1,19 +1,19 @@
 body{
     margin:0;
 }
+/*HEADER SECTIE*/
 
 /* Hierin staan er sales enz gwn reclame aanbiedingen v.d. website*/ 
 .tekst-header{
     background-color: #3643ba;
     color: white;
-    margin: 0;
     text-align: center;
     width: 100%;
     height:clamp(2.8125rem, 3.6458rem + -1.0417vw, 3.4375rem)
 }
 
 .header-icons{
-    margin: 10px 10px 10px 15px;
+    margin: 10px 10px 10px 15px; /*space om de header icons heen*/
 }
 .burger-menu{
 width: auto;
@@ -23,7 +23,6 @@ height: 20px;
   border: none;
   background-color: #F5F4F5;
   border-radius: 25px;
-
   display: flex;
   margin: 10px auto;
   margin-bottom: 15px;
@@ -32,15 +31,40 @@ width: clamp(18.75rem, 14.5833rem + 20.8333vw, 31.25rem)
 }
 
 /*navigatie naar andere secties van de website dus naar dames/ kinderen/sportkleding etc*/
+ul {
+  list-style: none;   /* verwijdert bolletjes */
+  padding: 0;         
+  margin: 0;
+}
+li:hover{
+text-decoration: underline;
+}
+a {
+text-decoration: none; /* geen streepje onder de link tekst */
+color:black;
+}
 .nav{
-    display: none;
+display: flex;
+justify-content: space-between; /*zorgt ervoor dat de nav-left helemaal aan het begin komt en nav-right aan het eind er is dus evenveel space in between them*/
+align-items: flex-start;
 }
 
- /*navigatie links (van waar je dus bent op de page) */
- a{
+.nav-left{
+text-align: left;
+display:flex; /*zodat elk list item naast elkaar komt te staan inplaats van onder elkaar*/
+gap:20px;
+margin-left: 45px;
+}
+.nav-right{
+    text-align:right;
+    display:flex; /* alle list items komen onder elkaar te staan*/
+    gap:20px;
+    margin-right: 45px;
+}
+.tags a{
+display:none;
 text-decoration: none;
-color:#616161;
-display: none;
+color:#616161; 
 }
 
 /*de laatste navigatie link van waar je bent je ziet alleen deze op kleiner scherm*/
@@ -48,72 +72,59 @@ display: none;
     color:#616161;
     margin:15px;
 }
+
+/*IMG SECTION*/
+.lil-nav{
+    display: none;
+}
+.slide{
+    position: relative;
+    scroll-snap-align: start;
+}
 /* Container van alle shirts */
 .container-shirts {
   display: flex;
   flex-direction: column;       /* verticale stapeling */
   justify-content: flex-start;
   width: clamp(18.125rem, 80% + 2rem, 61.875rem); /* responsive clamp */
-  height: 295px;                /* hoogte van het scroll-gebied */
+ height: 295px;                /*hoogte van het scroll-gebied */
   margin: 15px auto 0 auto;
   overflow-y: auto;             /* verticale scroll mogelijk */
   scroll-snap-type: y mandatory; /* scroll-snap */
   scroll-behavior: smooth;       /* soepele scroll */
   -webkit-overflow-scrolling: touch; /* voor mobiel smooth scroll */
-  
-  @media(min-width:1024px){
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 12px;
-  padding: 10px;
-
-   overflow-y: auto;
-  scrollbar-width: none;
-  }
 }
 
-/* Verberg scrollbars */
 .container-shirts::-webkit-scrollbar {
-  display: none;
+position:static; /* Verbergt scrollbars in Chrome, safari, Opera */
 }
+
 .container-shirts {
-  scrollbar-width: none;  /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none;  /* verbergt de scrollbar in Firefox */
+  -ms-overflow-style: none; /* verbergt de scrollbar in IE/Edge */
 }
 
 /* Elke individuele slide */
-.slide {
-  position: relative;
+.shirts{
+  display:block;
+  object-fit:cover; /*vult de breedte in zonder dat het vervormt*/
+  height:auto;
   flex-shrink: 0;           /* voorkomt dat slides krimpen */
   width: 100%;              /* vult container breedte */
   max-width: 300px;         /* max breedte van slide */
-  scroll-snap-align: start; /* scroll-snap aan het begin van elke slide */
-
-  @media (min-width:1024px){
-    position: relative;
-  height: 300px;
-  cursor: pointer;
-  }
 }
 
 /* Afbeeldingen in slide */
-.slide img {
+.shirt img {
   display: block;
   width: 100%;
   height: auto;
+}
 
-  @media (min-width:1024px){
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: 0.3s ease;
-  }
+.shirt:hover img {
+  transform: scale(1.05); /*maakt de img groter als je erop hovert*/
 }
-.slide:hover img {
-  filter: saturate(1);
-  transform: scale(1.05);
-}
+
 /* Overlay nummer tekst */
 .number-text {
   position: absolute;
@@ -124,10 +135,6 @@ display: none;
   font-weight: bold;
   background-color: #3643ba; 
   padding: 2px 5px;
-  
-  @media(min-width: 1024px){
-    display: none;
-  }
 }
 .line{
     width: 3px;
@@ -171,3 +178,83 @@ display: none;
     margin: 40px auto;
     display:block;
 }
+
+/* Mediaqueries*/
+
+@media (min-width: 1024px) {
+    .slide{
+        position: static;
+    }
+
+  /* wrapper van de afbeeldingen */
+  .wrapper {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 12px;
+    height: 100vh;
+    margin: 45px;
+    align-items: start;
+  }
+
+  .container-shirts {
+    position: relative;
+    height: 80vh;
+    overflow: hidden; /*als iets groter is dan 80vh word het verborgen*/
+  }
+
+  .shirts {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* eerste afbeelding zichtbaar */
+   #shirt-1 {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* aangeklikte thumbnail */
+  .shirts:target {
+    pointer-events: auto;
+    opacity: 1;
+  }
+  
+.lil-nav {
+  height: 80vh;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  scrollbar-width: none;
+}
+.lil-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.lil-nav a {
+  height: 90px;
+}
+
+.lil-nav img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s ease;
+}
+
+.lil-nav img:hover {
+  transform: scale(1.05);
+}
+
+  /* nummer verbergen */
+  .number-text {
+    display: none;
+  }
+}
+
