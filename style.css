@@ -5,6 +5,7 @@ body{
 
 /* Hierin staan er sales enz gwn reclame aanbiedingen v.d. website*/ 
 .tekst-header{
+    margin:0;
     background-color: #3643ba;
     color: white;
     text-align: center;
@@ -36,25 +37,31 @@ ul {
   padding: 0;         
   margin: 0;
 }
-li:hover{
-text-decoration: underline;
-}
+
 a {
 text-decoration: none; /* geen streepje onder de link tekst */
 color:black;
 }
+
 .nav{
 display: flex;
 justify-content: space-between; /*zorgt ervoor dat de nav-left helemaal aan het begin komt en nav-right aan het eind er is dus evenveel space in between them*/
 align-items: flex-start;
 }
 
+.nav-left li:hover{
+   text-decoration: underline; 
+}
+.nav-right li:hover{
+    text-decoration: underline;
+}
 .nav-left{
 text-align: left;
 display:flex; /*zodat elk list item naast elkaar komt te staan inplaats van onder elkaar*/
 gap:20px;
 margin-left: 45px;
 }
+
 .nav-right{
     text-align:right;
     display:flex; /* alle list items komen onder elkaar te staan*/
@@ -178,10 +185,41 @@ position:static; /* Verbergt scrollbars in Chrome, safari, Opera */
     margin: 40px auto;
     display:block;
 }
-
+.info-tekst{
+    width:250px;
+}
 /* Mediaqueries*/
 
 @media (min-width: 1024px) {
+    .zoekbalk{
+        margin-bottom: 25px;
+    }
+    .nav{
+        margin-bottom: 10px;
+    }
+    .tags a {
+        text-decoration: none;
+        display:contents;
+    }
+    
+    .tags{
+         margin: 0 45px 0 45px;
+        list-style: none;
+        flex-direction: column;
+    }
+    .current{
+          margin: 0 ;
+        list-style: none;
+        flex-direction: column;
+    }
+    .tag-list{
+        display: flex;
+                gap:25px;
+    }
+  .product-layout{
+    display: flex;
+    justify-content: space-between;
+  }
     .slide{
         position: static;
     }
@@ -190,7 +228,7 @@ position:static; /* Verbergt scrollbars in Chrome, safari, Opera */
   .wrapper {
     display: grid;
     grid-template-columns: 120px 1fr;
-    gap: 12px;
+    gap: 45px;
     height: 100vh;
     margin: 45px;
     align-items: start;
@@ -256,5 +294,6 @@ position:static; /* Verbergt scrollbars in Chrome, safari, Opera */
   .number-text {
     display: none;
   }
+  
 }
 
