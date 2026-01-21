@@ -195,8 +195,8 @@ a {
     height:80px;
     width: auto;
 }
-h2{
-    width:50%;
+.vp-title-s{
+    font-family: Inter, Inter Fallback;
 }
 .info-tekst{
     width: 50%;
@@ -219,6 +219,14 @@ h2{
     margin-top: 45px;
 }
 
+
+footer{
+    width: 100%;
+    height: auto;
+    margin-bottom:0;
+    padding:300px;
+    background-color:#3643BA;
+}
 /* Mediaqueries*/
 
 @media (min-width: 1024px) {
@@ -259,7 +267,9 @@ h2{
     text-decoration: underline;
 }
 
-    
+    .ul-slide::scroll-marker-group{
+        display:none;
+    }
     .tags{
          margin: 0 45px 0 45px;
         list-style: none;
@@ -277,6 +287,10 @@ h2{
   .product-layout{
     display: flex;
     gap: 550px;
+  }
+
+  .slide-counter{
+    display:none;
   }
     .slide{
         position: static;
