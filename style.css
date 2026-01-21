@@ -13,53 +13,48 @@ body{
     height:clamp(2.8125rem, 3.6458rem + -1.0417vw, 3.4375rem)
 }
 
+/*header sectie met icoontjes en zoekbalk*/
 .header-icons{
     margin: 10px 10px 10px 15px; /*space om de header icons heen*/
 }
 .burger-menu{
-width: auto;
-height: 20px;
+    width: auto;
+    height: 20px;
 }
 .zoekbalk{
-  border: none;
-  background-color: #F5F4F5;
-  border-radius: 25px;
-  display: flex;
-  margin: 10px auto;
-  margin-bottom: 15px;
-  height: 45px;
-width: clamp(18.75rem, 14.5833rem + 20.8333vw, 31.25rem)
+    border: none;
+    background-color: #F5F4F5;
+    border-radius: 25px;
+    display: flex;
+    margin: 10px auto;
+    margin-bottom: 15px;
+    height: 45px;
+    width: clamp(18.75rem, 14.5833rem + 20.8333vw, 31.25rem)
 }
 
 /*navigatie naar andere secties van de website dus naar dames/ kinderen/sportkleding etc*/
 ul {
-  list-style: none;   /* verwijdert bolletjes */
-  padding: 0;         
-  margin: 0;
+    list-style: none;   /* verwijdert bolletjes */
+    padding: 0;         
+    margin: 0;
 }
 
 a {
-text-decoration: none; /* geen streepje onder de link tekst */
-color:black;
+    text-decoration: none; /* geen streepje onder de link tekst */
+    color:black;
 }
 
 .nav{
-display: flex;
-justify-content: space-between; /*zorgt ervoor dat de nav-left helemaal aan het begin komt en nav-right aan het eind er is dus evenveel space in between them*/
-align-items: flex-start;
+    display: flex;
+    justify-content: space-between; /*zorgt ervoor dat de nav-left helemaal aan het begin komt en nav-right aan het eind er is dus evenveel space in between them*/
+    align-items: flex-start;
 }
 
-.nav-left li:hover{
-   text-decoration: underline; 
-}
-.nav-right li:hover{
-    text-decoration: underline;
-}
 .nav-left{
-text-align: left;
-display:flex; /*zodat elk list item naast elkaar komt te staan inplaats van onder elkaar*/
-gap:20px;
-margin-left: 45px;
+    text-align: left;
+    display:flex; /*zodat elk list item naast elkaar komt te staan inplaats van onder elkaar*/
+    gap:20px;
+    margin-left: 45px;
 }
 
 .nav-right{
@@ -68,10 +63,18 @@ margin-left: 45px;
     gap:20px;
     margin-right: 45px;
 }
+.nav-left li:hover{
+   text-decoration: underline; 
+}
+.nav-right li:hover{
+    text-decoration: underline;
+}
+
+/*geeft aan op welk gedeelte je bent van de website aan de hand van tekst*/
 .tags a{
-display:none;
-text-decoration: none;
-color:#616161; 
+    display:none;
+    text-decoration: none;
+    color:#616161; 
 }
 
 /*de laatste navigatie link van waar je bent je ziet alleen deze op kleiner scherm*/
@@ -80,25 +83,19 @@ color:#616161;
     margin:15px;
 }
 
-/*IMG SECTION*/
+/*Img sectie*/
+
 .lil-nav{
-    display: none;
+    display: none; /*de gelinkte fotos worden niet getoond*/
 }
-.slide{
-flex-shrink: 0;
-  scroll-snap-align: start;
-  display: grid;
-  place-items: center;
-  height: 295px;
-  position: relative;
-}
-/* Container van alle shirts */
+
+/* Container van alle slides */
 .container-shirts {
   display: flex;
   flex-direction: column;       /* verticale stapeling */
   justify-content: flex-start;
-  width: clamp(18.125rem, 80% + 2rem, 61.875rem); /* responsive clamp */
- height: 295px;                /*hoogte van het scroll-gebied */
+  width: clamp(18.125rem, 80% + 2rem, 61.875rem); /* responsive clamp voor de breedte */
+  height: 295px;                /*hoogte van het scroll-gebied */
   margin: 15px auto 0 auto;
   overflow-y: auto;             /* verticale scroll mogelijk */
   scroll-snap-type: y mandatory; /* scroll-snap */
@@ -109,13 +106,74 @@ flex-shrink: 0;
   -ms-overflow-style: none;
 }
 
+.slide{
+    scroll-snap-align: start; /* elke slide komt vast aan de bovenkant (zo gaat het scrollen netjes)*/
+    display: block;
+    height: 295px;
+    position: relative;
+    container-type: scroll-state;
+}
 
+/* Scroll functie lijnen*/
+.ul-slide {
+  position: relative;
+  height: 80vh;                 /* hoogte van scroll-gebied */
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;             /* scrollbaar verticaal */
+  scroll-snap-type: y mandatory; /*hierdoor stoppen de slides netjes een voor een bij het scrollen het geeft een soort van snap*/
+  scroll-behavior: smooth;
+  overscroll-behavior: contain; /*zorgt ervoor dat niet de hele pagina mee scrollt maar alleen de container*/
+  scrollbar-width: none;
+  counter-reset: slide;         /* voor telling van slides */
+  
+  
+  anchor-name: --carousel; /* anchor voor scroll markers */
+  scroll-marker-group: after;   /*dit maakt de lijntjes*/
+
+}
+
+/* elke aparte slides */
+.ul-slide .slide {
+  flex-shrink: 0;
+  position: relative;
+  scroll-snap-align: center;
+  scroll-snap-stop: always; /*hierdoor zijn er geen halve slides zichtbaar*/
+  display: grid;
+  place-items: center;
+  height: 80vh;                 /* vul de viewport */
+  counter-increment: slide;     /* teller gaat omhoog bij elke slide */
+}
+
+/*scroll maker lijntjes*/
+.ul-slide::scroll-marker-group {
+  position: absolute;
+  position-anchor: --carousel;
+  position-area: center;        /* zet ze naast carousel */
+  right: -90%;                  /* afstand van de slides */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+}
+
+.ul-slide .slide::scroll-marker {
+  content: '';
+  width: 3px;
+  height: 10px;
+  background-color: black;
+  transition: 0.25s;
+}
+
+/* zo worden de actieve slide marker groter*/
+.ul-slide .slide::scroll-marker:target-current {
+  height: 40px;
+}
 
 /* Elke individuele slide */
 .shirts{
   display:block;
   object-fit:cover; /*vult de breedte in zonder dat het vervormt*/
-  height:auto;
+  height:100%;
   flex-shrink: 0;           /* voorkomt dat slides krimpen */
   width: 100%;              /* vult container breedte */
   max-width: 300px;         /* max breedte van slide */
@@ -135,7 +193,7 @@ flex-shrink: 0;
 /* slide nummer sticky linksonder */
 .slide-counter {
   position: sticky;
-  bottom: 5px;
+  bottom: 35px;
   left: 5px;
   background-color:  #3643ba;
   color: #fff;
@@ -146,20 +204,8 @@ flex-shrink: 0;
   display:inline-block;
   width: fit-content;
 }
-.line{
-    width: 3px;
-    height:15px;
-    background-color: black;
-    border-radius: 10px;
-    display:flex;
-    margin:15px;
-    transition: background-color 0.6s ease;
-    cursor: pointer;
-}
 
-.active, .line:hover{
-    height:40px;
-}
+
 .id-text{
     color: #616161;
 }
@@ -299,10 +345,6 @@ h2{
   transform: scale(1.05);
 }
 
-  /* nummer verbergen */
-  .number-text {
-    display: none;
-  }
-  
+ 
 }
 
