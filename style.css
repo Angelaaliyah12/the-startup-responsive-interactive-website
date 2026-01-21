@@ -85,8 +85,12 @@ color:#616161;
     display: none;
 }
 .slide{
-    position: relative;
-    scroll-snap-align: start;
+flex-shrink: 0;
+  scroll-snap-align: start;
+  display: grid;
+  place-items: center;
+  height: 295px;
+  position: relative;
 }
 /* Container van alle shirts */
 .container-shirts {
@@ -100,16 +104,12 @@ color:#616161;
   scroll-snap-type: y mandatory; /* scroll-snap */
   scroll-behavior: smooth;       /* soepele scroll */
   -webkit-overflow-scrolling: touch; /* voor mobiel smooth scroll */
+  position:relative; /*dit is voor de sticky nummer teller*/
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.container-shirts::-webkit-scrollbar {
-position:static; /* Verbergt scrollbars in Chrome, safari, Opera */
-}
 
-.container-shirts {
-  scrollbar-width: none;  /* verbergt de scrollbar in Firefox */
-  -ms-overflow-style: none; /* verbergt de scrollbar in IE/Edge */
-}
 
 /* Elke individuele slide */
 .shirts{
@@ -132,16 +132,19 @@ position:static; /* Verbergt scrollbars in Chrome, safari, Opera */
   transform: scale(1.05); /*maakt de img groter als je erop hovert*/
 }
 
-/* Overlay nummer tekst */
-.number-text {
-  position: absolute;
-  z-index: 10; /* hierdoor blijft het dus vast boven aan de slides*/
+/* slide nummer sticky linksonder */
+.slide-counter {
+  position: sticky;
   bottom: 5px;
   left: 5px;
-  color: white;
+  background-color:  #3643ba;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
   font-weight: bold;
-  background-color: #3643ba; 
-  padding: 2px 5px;
+  z-index: 10; /*hierdoor is het op de afbeelding dus ervoor*/
+  display:inline-block;
+  width: fit-content;
 }
 .line{
     width: 3px;
