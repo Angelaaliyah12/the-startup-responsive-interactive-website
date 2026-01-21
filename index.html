@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Decathlon</title>
     <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
 </head>
 <body>
     <header>
@@ -50,8 +51,7 @@
      </header>
 <body>
   <div class="product-layout">
-<!-- <button class="button-up">
-</button> -->
+
 <div class="wrapper">
 
 <nav class="lil-nav">
@@ -75,39 +75,28 @@
 
 
 <div class="container-shirts">
+  <div class="slide">
+    <img id="shirt-1" class="shirts" src="assets/shirt1.png" alt="tshirt1">
+  </div>
 
-<div class="slide">
-<img id="shirt-1" class="shirts" src="assets/shirt1.png" alt="tshirt1">
-<div class="number-text">1/4</div>
-</div>
-
-<div class="slide">
-<img id="shirt-2" class="shirts" src="assets/shirt2.png" alt="tshirt2">
-<div class="number-text">2/4</div>
-</div>
+  <div class="slide">
+    <img id="shirt-2" class="shirts" src="assets/shirt2.png" alt="tshirt2">
+  </div>
 
 <div class="slide">
 <img id="shirt-3" class="shirts" src="assets/shirt3.png" alt="tshirt3">
-<div class="number-text">3/4</div>
 </div>
 
 <div class="slide">
 <img id="shirt-4" class="shirts" src="assets/shirt4.png" alt="tshirt4">
-<div class="number-text">4/4</div>
 </div>
+
+  <!-- Slide counter -->
+  <span class="slide-counter">1/4</span>
 
 </div>
 </div>
 
-<!-- <button class="button-down">
-</button> -->
-
-<!-- <div class="lines">
-  <span class="line" onclick="currentSlide(1)"></span>
-  <span class="line" onclick="currentSlide(2)"></span>
-  <span class="line" onclick="currentSlide(3)"></span>
-  <span class="line" onclick="currentSlide(4)"></span>
-</div> -->
 
 <section class="info">
 <h1>DOMYOS</h1>
@@ -159,7 +148,7 @@
 </section>
 <footer>
 
-  
+
 </footer>
 </body>
 </html>
