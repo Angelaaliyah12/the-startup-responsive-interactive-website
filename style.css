@@ -170,7 +170,12 @@ position:static; /* Verbergt scrollbars in Chrome, safari, Opera */
     height:80px;
     width: auto;
 }
-
+h2{
+    width:50%;
+}
+.info-tekst{
+    width: 50%;
+}
 .prijs{
     background-color: #FFCD4E;
     padding: 5px 10px;
@@ -185,9 +190,10 @@ position:static; /* Verbergt scrollbars in Chrome, safari, Opera */
     margin: 40px auto;
     display:block;
 }
-.info-tekst{
-    width:250px;
+.info{
+    margin-top: 45px;
 }
+
 /* Mediaqueries*/
 
 @media (min-width: 1024px) {
@@ -218,7 +224,7 @@ position:static; /* Verbergt scrollbars in Chrome, safari, Opera */
     }
   .product-layout{
     display: flex;
-    justify-content: space-between;
+    gap: 550px;
   }
     .slide{
         position: static;
