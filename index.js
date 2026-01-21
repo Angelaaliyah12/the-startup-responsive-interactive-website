@@ -1,8 +1,8 @@
 //stap:1 selecteer de container van de slides (want dit is het gedeelte dat kan scrollen)
-let container = document.querySelector('.container-shirts');
+let container = document.querySelector('.ul-slide');
 
 //stap2: selecteer alle slides binnen de container
-let slides = document.querySelectorAll('.container-shirts .slide');
+let slides = document.querySelectorAll('.ul-slide .slide');
 
 //stap3: selecteer de nummer-counter
 let counter = document.querySelector('.slide-counter');
@@ -20,7 +20,7 @@ container.addEventListener('scroll', function() {
 // en voer de onderstaande code uit voor die slide
 slides.forEach(function(slide, index) {
 
-  // Als de volgende slide bereikt is, update de teller (de scrollafstand is dan dus groter of gelijk aan de sl)
+  // Als de volgende slide bereikt is, update de teller (de scrollafstand is dan dus groter of gelijk aan de)
   //index + 1 want je begint anders bij 0 en je wilt bij 1 beginnen
   if (scrollAfstand >= slide.offsetTop) {
     counter.textContent = (index + 1) + "/" + slides.length;
