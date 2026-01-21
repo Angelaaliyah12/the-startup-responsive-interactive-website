@@ -71,7 +71,7 @@ a {
   flex-direction: column;       /* verticale stapeling */
   justify-content: flex-start;
   width: clamp(18.125rem, 80% + 2rem, 61.875rem); /* responsive clamp voor de breedte */
-  height: 295px;                /*hoogte van het scroll-gebied */
+  height: 80vh;                /*hoogte van het scroll-gebied */
   margin: 15px auto 0 auto;
   overflow-y: auto;             /* verticale scroll mogelijk */
   scroll-snap-type: y mandatory; /* scroll-snap */
@@ -113,7 +113,7 @@ a {
 .ul-slide .slide {
   flex-shrink: 0;
   position: relative;
-  scroll-snap-align: center;
+  scroll-snap-align: start;
   scroll-snap-stop: always; /*hierdoor zijn er geen halve slides zichtbaar*/
   display: grid;
   place-items: center;
@@ -152,7 +152,7 @@ a {
   height:100%;
   flex-shrink: 0;           /* voorkomt dat slides krimpen */
   width: 100%;              /* vult container breedte */
-  max-width: 300px;         /* max breedte van slide */
+  max-width: none;         
 }
 
 /* Afbeeldingen in slide */
