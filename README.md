@@ -3,6 +3,7 @@ De instructies voor deze opdracht staan in: [INSTRUCTIONS.md](https://github.com
 
 # Decathlon Detail pagina
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
+- The decathlon detail page (that we have to change)
 <img width="161" height="606" alt="image" src="https://github.com/user-attachments/assets/857f8f77-e6a1-4c81-a5dc-ffb4b92c1b09" />
 <img width="616" height="505" alt="image" src="https://github.com/user-attachments/assets/7d355849-c9b4-48e3-bf86-109aa5a73b4d" />
 
