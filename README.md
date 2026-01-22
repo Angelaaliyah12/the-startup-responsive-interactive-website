@@ -56,6 +56,8 @@ https://github.com/user-attachments/assets/4b2bd3bc-5f96-471c-b0c3-d6a6d16b1ac3
 - Heading structure
 <img width="506" height="290" alt="image" src="https://github.com/user-attachments/assets/91018c7a-4a2c-42e1-a013-83467bba8d1d" />
 
+- Javascript
+<img width="1216" height="756" alt="image" src="https://github.com/user-attachments/assets/03c77a4f-72a6-4072-a95b-6191b2c92b9b" />
 
 This project is licensed under the terms of the [MIT license](./LICENSE).
 
