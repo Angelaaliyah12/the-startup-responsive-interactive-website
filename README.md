@@ -38,12 +38,14 @@ https://github.com/user-attachments/assets/9071426b-596a-4b01-9fde-800ecaff5b76
 
 ## Interactief
 
-- 
-https://github.com/user-attachments/assets/9c226910-0578-42ac-8881-7022d044ffd9
+
+https://github.com/user-attachments/assets/4aedfbf8-0dab-47e5-8304-62a23a996a7e
+
+
+https://github.com/user-attachments/assets/cfb06f99-2693-4082-913f-e4f409dd5532
 
 
 
-https://github.com/user-attachments/assets/a273da2a-33a2-4d3c-be34-24f1d02409c0
 
 
 
