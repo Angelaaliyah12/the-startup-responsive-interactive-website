@@ -6,8 +6,8 @@ body{
 /* Hierin staan er sales enz gwn reclame aanbiedingen v.d. website*/ 
 .tekst-header{
     margin:0;
-    background-color: #3643ba;
-    color: white;
+    background-color: var(--color-primary);
+    color: var(--color-text-tertiary);
     text-align: center;
     width: 100%;
     height:clamp(2.8125rem, 3.6458rem + -1.0417vw, 3.4375rem)
@@ -23,7 +23,7 @@ body{
 }
 .zoekbalk{
     border: none;
-    background-color: #F5F4F5;
+    background-color: var( --color-searchbar);
     border-radius: 25px;
     display: flex;
     margin: 10px auto;
@@ -44,7 +44,7 @@ ul {
 
 a {
     text-decoration: none; /* geen streepje onder de link tekst */
-    color:black;
+    color:var(--color-text-primary);
 }
 
 /*geeft aan op welk gedeelte je bent van de website aan de hand van tekst*/
@@ -55,7 +55,7 @@ a {
 /*de laatste navigatie link van waar je bent je ziet alleen deze op kleiner scherm*/
 .tags .current a {
     display: inline;
-    color:#616161;
+    color:var(--color-text-secondary);
     margin:15px;
 }
 
@@ -136,7 +136,7 @@ a {
   content: '';
   width: 3px;
   height: 10px;
-  background-color: black;
+  background-color: var(--color-text-primary);
   transition: 0.25s;
 }
 
@@ -171,8 +171,8 @@ a {
   position: sticky;
   bottom: 35px;
   left: 5px;
-  background-color:  #3643ba;
-  color: #fff;
+  background-color: var(--color-primary);
+  color: var(--color-text-tertiary);
   padding: 5px;
   border-radius: 3px;
   font-weight: bold;
@@ -185,7 +185,7 @@ a {
 }
 
 .id-text{
-    color: #616161;
+    color:var(--color-text-secondary);
 }
 
 .review{
@@ -197,9 +197,7 @@ a {
     height:80px;
     width: auto;
 }
-.vp-title-s{
-    font-family: Inter, Inter Fallback;
-}
+
 .info{
   margin-left:25px;
 }
@@ -211,16 +209,16 @@ a {
 }
 .prijs{
   display: inline-block;
-    background-color: #FFCD4E;
+    background-color:var(   --color-price);
     padding: 5px 10px;
     margin: 20px 0 0 25px;
   
 
 }
 .winkelmand{
-    background-color: #3643BA;
-    color: white;
-    font-size: 15px;
+    background-color:var(   --color-primary);
+    color: var(--color-text-tertiary);
+    font-size: var(--font-size-p);
     border: none;
     padding: 25px 90px;
     margin: 40px auto;
@@ -234,7 +232,7 @@ footer{
     margin-bottom:0;
     margin-top: 300px;
     padding:300px;
-    background-color:#3643BA;
+    background-color:var(   --color-primary);
 }
 /* Mediaqueries*/
 @media (min-width: 1024px) {
@@ -287,7 +285,7 @@ footer{
   }
   .tags a{
     display: inline;
-    color:#616161;
+    color:var( --color-text-secondary);
     margin:15px;
   }
 
