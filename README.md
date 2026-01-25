@@ -3,6 +3,10 @@ De instructies voor deze opdracht staan in: [INSTRUCTIONS.md](https://github.com
 
 # Decathlon Detail pagina
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
+- The decathlon detail page (that we have to change)
+<img width="161" height="606" alt="image" src="https://github.com/user-attachments/assets/857f8f77-e6a1-4c81-a5dc-ffb4b92c1b09" />
+<img width="616" height="505" alt="image" src="https://github.com/user-attachments/assets/7d355849-c9b4-48e3-bf86-109aa5a73b4d" />
+
 
 ## Beschrijving
 - For this project we have to touch up the detail page of decathlon.
@@ -38,12 +42,14 @@ https://github.com/user-attachments/assets/9071426b-596a-4b01-9fde-800ecaff5b76
 
 ## Interactief
 
-- 
-https://github.com/user-attachments/assets/9c226910-0578-42ac-8881-7022d044ffd9
+
+https://github.com/user-attachments/assets/4aedfbf8-0dab-47e5-8304-62a23a996a7e
+
+
+https://github.com/user-attachments/assets/cfb06f99-2693-4082-913f-e4f409dd5532
 
 
 
-https://github.com/user-attachments/assets/a273da2a-33a2-4d3c-be34-24f1d02409c0
 
 
 
@@ -56,6 +62,8 @@ https://github.com/user-attachments/assets/4b2bd3bc-5f96-471c-b0c3-d6a6d16b1ac3
 - Heading structure
 <img width="506" height="290" alt="image" src="https://github.com/user-attachments/assets/91018c7a-4a2c-42e1-a013-83467bba8d1d" />
 
+- Javascript
+<img width="1216" height="756" alt="image" src="https://github.com/user-attachments/assets/03c77a4f-72a6-4072-a95b-6191b2c92b9b" />
 
 This project is licensed under the terms of the [MIT license](./LICENSE).
 
