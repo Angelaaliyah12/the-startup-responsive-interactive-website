@@ -1,0 +1,17 @@
+
+@layer styleguide {
+    :root {
+        /* Variabelen Kleuren */
+        --color-primary: #3643BA;
+        --color-price:#FFCD4E;
+        --color-text-primary:#000000;
+        --color-text-secondary: #737373;
+        --color-text-tertiary: #FFFFFF;
+        --color-searchbar:#F5F4F5;
+        
+        /* Variabelen Fontsize*/
+        --font-size-h1: 4.5re
+        --font-size-p: 15px;
+    }
+}
+        
